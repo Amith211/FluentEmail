@@ -5,19 +5,31 @@
     <AssemblyTitle>Fluent Email - Liquid</AssemblyTitle>
     <Authors>Marko Lahma;$(Authors)</Authors>
     <PackageTags>$(PackageTags);liquid</PackageTags>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net6.0;net7.0</TargetFrameworks>
     <AssetsDirectory>../../../assets</AssetsDirectory>
     <NoWarn>NU5104</NoWarn>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+<PropertyGroup>
+  <MinVerTagPrefix>v</MinVerTagPrefix>
+</PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Fluid.Core" Version="2.0.13" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="Fluid.Core" Version="2.3.1" />
+    <PackageReference Include="MinVer" Version="4.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\FluentEmail.Core\FluentEmail.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
   </ItemGroup>
 
 </Project>
